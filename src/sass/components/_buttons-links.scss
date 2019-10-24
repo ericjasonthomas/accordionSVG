@@ -1,0 +1,94 @@
+ul.button-link-list {
+    display: inline-block;
+    width: 100%;
+    margin: 0px auto;
+    list-style-type: none;
+    list-style-position: initial;
+    list-style-image: initial;
+    li {
+        width: 100%;
+        margin-right: 0;
+        padding-left: 0;
+        list-style-type: none;
+        list-style-position: initial;
+        list-style-image: initial;
+        &:before {
+            display: none;
+        }
+        a {
+            position: relative;
+            display: flex;
+            width: 100%;
+            padding: 15px 46px 15px 15px;
+            background: rgb(244, 244, 244);
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+            font-size: 17px;
+            font-weight: 700;
+            text-decoration-line: none;
+            text-decoration-style: initial;
+            text-decoration-color: initial;
+            color: rgb(0, 0, 0);
+            align-items: center;
+            word-wrap: break-word;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            &:after {
+                @include icon(arrow, 11px, 19px, $lt-red);
+                width: 11px;
+                height: 19px;
+                display: block;
+                content: '';
+                position: absolute;
+                top: 50%;
+                margin-top: -9px;
+                right: 15px;
+                /*
+                content: "";
+                position: absolute;
+                display: block;
+                top: 40%;
+                right: 15px;
+                width: 11px;
+                height: 19px;
+                margin-top: -9px;
+                font-size: 17px;
+                font-weight: 700;
+                color: rgb(201, 48, 44);
+                fill: rgb(194, 4, 48);
+                */
+            }
+            &:hover {
+                background-color: rgb(204, 204, 204);
+            }
+        }
+    }
+}
+
+.button-link {
+    width: 49%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    float: left;
+    &:only-child {
+        margin-left: 25.5%;
+        margin-right: 25.5%;
+    }
+    &:after {
+        content: '';
+        display: block;
+        height: 0px;
+        float: none;
+        clear: both;
+    }
+    @media screen and (max-width: $screen-sm-min) {
+        width: 99%;
+        float: none;
+        &:only-child {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}

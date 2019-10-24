@@ -1,0 +1,151 @@
+/** SPOTLIGHT
+spotlight image spec 1350px X 490px or proportional- web optimized medium (~45KB in size)
+Desktop - min-height of 490px (will grow with spotlight copy)
+Mobile - min-height of 250px (will grow with spotlight copy)
+
+#critial
+**/
+
+.spotlight {
+    background: $lt-light-gray-3;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+    &__copy-wpr {
+        display: table;
+        height: 250px;
+        position: relative;
+        width: 100%;
+        bottom: 0;
+        @media screen and (min-width: $screen-sm-min) {
+            height: 490px;
+            width: 90%;
+        }
+    }
+    &__copy {
+        z-index: 2;
+        margin-top: 200px;
+        display: table-cell;
+        vertical-align: bottom;
+        padding-bottom: 40px;
+        .spotlight__videolink {
+            flex-wrap: wrap;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include lshape-enclosure(lshape, 20px, 27px, $lt-red, 10px 20px);
+            @media screen and (min-width: $screen-sm-min) {
+                @include lshape-enclosure(lshape, 40px, 55px, $lt-red, 10px 20px);
+            }
+            h1 {
+                flex: 1;
+                vertical-align: middle;
+                display: inline-block;
+                position: relative;
+                line-height: 1.1em;
+                font-size: 1.5em;
+                margin-left: 12px;
+                margin-bottom: 0px;
+                @media screen and (min-width: $screen-sm-min) {
+                    font-size: 2.35em;
+                    margin-left: 20px;
+                }
+            }
+            p {
+                margin: 0.5em 0 0 0;
+                flex-basis: 100%;
+                padding: 12px;
+            }
+        }
+        @media screen and (min-width:$screen-sm-min) {
+            padding: 60px 0 60px 0;
+        }
+    }
+    &__image {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        margin: 0 auto;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        z-index: 1;
+        @media screen and (min-width: 1350px) {
+            width: 1350px;
+            left: 50%;
+            margin-left: -675px;
+        }
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 100%);
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+#videoLink>a>.videoIcon {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+}
+
+#videoLink>a>.videoIcon:hover {
+    opacity: 0.7;
+}
+
+#videoLink::after,
+#videoLink::before,
+#videoIcon::before {
+    background-image: none;
+    background-position: initial;
+    background-size: initial;
+    background-repeat: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+}
+
+#videoIcon::after {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 40 48' width='100' height='100' fill='%23c20430' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M38.6 21.4L4.6.4A3 3 0 0 0 0 3v42a3 3 0 0 0 4.6 2.6l34-21a3 3 0 0 0 0-5.2z'/%3E%3C/svg%3E");
+    content: "";
+    display: inline-block;
+    fill: rgb(194, 4, 48);
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.9);
+    background-position: 60% 50%;
+    background-size: 40px 48px;
+    background-repeat: no-repeat no-repeat;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    transform: rotate(0deg);
+}
+
+@media screen and (max-width: 768px) {
+    #videoLink>a>.videoIcon {
+        height: 60px;
+        width: 60px;
+    }
+    #videoIcon::after {
+        background-size: 20px 28px;
+        height: 60px;
+        width: 60px;
+    }
+}

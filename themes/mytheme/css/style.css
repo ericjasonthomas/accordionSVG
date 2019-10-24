@@ -1,0 +1,65 @@
+/*!
+Theme Name: lincolntech
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: lincolntech
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+lincolntech is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
+*/
+/* LT Colors*/
+/* LT Colors****/
+/*LT-font-size*/
+/*LT-font-size****/
+/*
+Create icons from SVG fragments
+Reference to sprite svg file is from .tmp folder task runner creates
+$id - id of the icon in svg sprite file
+$width - desired width of the icon you want - make sure to maintain the proportion
+$height - desired height of the icon you want - make sure to maintain the proportion
+$fill - desired color for the icon (for colors refer to styleguide and same name in variable file)
+*/
+/*
+Create desired size and color L Shape enclosure
+$id - id of the icon in svg sprite file (this will always be lshape for now unless someone changes name)
+$width - desired width of the icon you want - make sure to maintain the proportion
+$height - desired height of the icon you want - make sure to maintain the proportion
+$fill - desired color for the icon (for colors refer to styleguide and same name in variable file)
+$pad - desired padding between lshape enclosure and enclosed block
+
+dependency - sprite-icons mixin
+*/
+/*
+* Generate declaration for heading underline decoration
+* $width - width of the underline (styleguide suggests 50px for LT)
+* $height - height of the underline (suggested for LT- 5px)
+* $color - color of the underline (should be LT Red for LT site)
+* $margin - we can use this to add negative space btwn headaer copy and underline deco. Format to use will be shorthand margin (suggest for left aligned - 0.7em 0 0 0, suggest for center aligned- 0.7em auto 0 auto)
+*/
+*:focus {
+  outline: none !important; }
+
+.section-wpr.stepsboxes {
+  padding: 10px 0; }
+
+.mailing-form.section-wpr {
+  padding: 10px 0px 1px 0px;
+  box-sizing: border-box;
+  position: relative; }
+  .mailing-form.section-wpr .rfi-form-wpr {
+    margin-top: 1px; }
+
+
+/*# sourceMappingURL=style.css.map*/
