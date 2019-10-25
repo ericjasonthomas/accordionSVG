@@ -1,7 +1,6 @@
 # Package and Built Files #
 ##########################3
 !.gitkeep
-vendor/
 node_modules/
 .env
 **/*/svg-defs.svg
