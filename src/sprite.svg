@@ -87,7 +87,7 @@
  </symbol>
 
 <symbol id="borderarr" viewBox="0 0 88.2 42.5">
- <defs><style>.a{fill:#fff;}.b{fill:#cccccc;}</style></defs><title>Untitled-1</title><polyline class="a" points="88.2 0 44.3 42 0 0"/><path class="b" d="M44.3,44a2,2,0,0,1-1.4-.5L2.1,4.8H7.8L44.3,39.3,80.7,4.6h5.8L45.7,43.5A2,2,0,0,1,44.3,44Z"/>
+ <defs><style>.a{fill:#fff;}.b{fill:#cccccc;}</style></defs><polyline class="a" points="88.2 0 44.3 42 0 0"/><path class="b" d="M44.3,44a2,2,0,0,1-1.4-.5L2.1,4.8H7.8L44.3,39.3,80.7,4.6h5.8L45.7,43.5A2,2,0,0,1,44.3,44Z"/>
 </symbol>
 
 <symbol id="validIcon" viewBox="0 0 70 70" width="70" height="70">

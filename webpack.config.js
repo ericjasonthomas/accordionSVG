@@ -63,12 +63,12 @@ module.exports = {
   },
   module: {
     rules: [
-      // {
-      //   enforce: 'pre',
-      //   exclude: /node_modules/,
-      //   test: /\.jsx$/,
-      //   loader: 'eslint-loader'
-      // },
+      {
+        enforce: 'pre',
+        exclude: /node_modules/,
+        test: /\.jsx$/,
+        loader: 'eslint-loader'
+      },
       {
         test: /\.jsx?$/,
 				exclude: /node_module/,
@@ -97,13 +97,13 @@ module.exports = {
             //   // you can specify a publicPath here
             //   // by default it uses publicPath in webpackOptions.output
             // publicPath: '/themes/mytheme/css',
-						 outputPath: 'css',
+						 		outputPath: 'css',
 						// 	// path: publicPath + '/css',
             //   // hmr: process.env.NODE_ENV === 'development',
 						 		sourceMap: true,
 							 	esModule: false,
              },
-         },
+         	},
            {
 						loader: 'css-loader',
 						 options: {
@@ -111,6 +111,16 @@ module.exports = {
 							// url: false,
 						 }
 					 },
+					 { 
+						 loader: 'postcss-loader', options: {
+		          ident: 'postcss',
+		          plugins: () => [
+		            postcssSVG({
+									 svgo: { plugins: [{ cleanupAttrs: false }] }
+								})
+		          ]
+		        	} 
+						},
            {
 						 loader: 'sass-loader',
 						 options: {
@@ -120,34 +130,17 @@ module.exports = {
         ]
       },
 			{
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          { loader: 'css-loader', options: { importLoaders: 1 } },
-          { loader: 'postcss-loader', options: {
-						utf8: true,
-            ident: 'postcss',
-            plugins: () => [
-              postcssSVG({
-								
-							})
-            ]
-          } }
-        ]
-      },
-			{
         test: /\.svg$/,
         loader: 'svg-url-loader'
     },
-			   {
-              test: /\.(png|jpe?g|gif|svg|ico)(\?.*)?$/,
-              loader: 'url-loader',
-              include: path.resolve(__dirname, '/images'), // new line
-              options: {
-                  name: '[name].[ext]'
-              }
-				 },
-
+	   {
+          test: /\.(png|jpe?g|gif|svg|ico)(\?.*)?$/,
+          loader: 'url-loader',
+          include: path.resolve(__dirname, '/images'), // new line
+          options: {
+              name: '[name].[ext]'
+          }
+		 },
     ]
   },
 };
